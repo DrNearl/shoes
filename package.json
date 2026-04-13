@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce",
+  "private": true,
+  "packageManager": "npm@10.5.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "npm run build --workspace=apps/web && npm run build --workspace=apps/admin",
+    "start": "node apps/api/index.js",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "turbo": "^2.8.16"
+  },
+  "dependencies": {
+    "@ant-design/charts": "^2.6.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.0"
+  }
+}
